@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- *Capturar Nombre Completo  maximo 50 minimo 3 cars caracteres obligatorio 
+         *idioma: select con las opciones español, ingles, potugues, frances, aleman y por defecto la opcion Seleccione
+         *Pais maximo 50 caracteres  obligatorio
+         *Nombre de usuario minimo de 6 caracteres y maximo 10, acepta letras y numeros
+         *contraseña minimo 6 cars y max 10
+         *2radio button para sexo (hombre  y mujer)
+         *fecha de nacimiento (validar que sea mayor de 18 años)
+         *Ocupación max 50 cars oblogatorio
+    -->
+      
+
+    <div class="container bg-secondary d-flex justify-content-center">
+        <form class="py-5 col-9 m-3 px-5 rounded border border-info shadow-lg bg-light" id="form">
+            <h2 class="text-center border-bottom mb-4">Completa el formulario</h2>
+            <div class="form-group" id="form-nombre">
+                <label for="nombre">Nombre completo: </label>
+                <input type="text" id="nombre" class="form-control" placeholder="Ricardo Peralta Montañez">
+                <div class="d-none" id="msjNombre"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="idioma">Idioma:</label>
+                <select name="idioma" id="idioma" class="form-control">
+                    <option value="Español">Español</option>
+                    <option value="Ingles">Inglés</option>
+                    <option value="Portugues">Portugués</option>
+                    <option value="Frances">Francés</option>
+                    <option value="Aleman">Alemán</option>
+                    <option value=""  selected hidden>Seleccione un valor</option>
+                </select>
+                <div class="d-none" id="msjIdioma"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="pais">Pais</label>
+              <input type="text" name="" id="pais" class="form-control" placeholder="México">
+              <div class="d-none" id="msjPais"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="usuario">Nombre de usuario</label>
+              <input type="text" name="" id="usuario" class="form-control" placeholder="Ricardo96">
+              <div class="d-none" id="msjUsuario"></div>
+            </div>
+            
+            <div class="container shadow-sm d-flex border border-info">
+              <div class="form-group col-6">
+                <label for="pass">Contraseña</label>
+                <input type="password" name="" id="pass" class="form-control">
+                <div class="d-none" id="msjPass"></div>
+              </div>
+              <div class="form-group col-6">
+                <label for="cpass">Confirmar contraseña</label>
+                <input type="password" name="" id="cpass" class="form-control">
+                <div class="d-none" id="msjCpass"></div>
+              </div>
+            </div>
+            
+            <div class="container shadow-sm d-flex px-5 border border-info mt-1">
+              <div class="form-check col-6">
+                <input class="form-check-input" type="radio" name="sx" id="sxFem" value="Femenino">
+                <label for="sxFem">Femenino</label>                    
+              </div>
+              <div class="form-check col-6">
+                <input class="form-check-input" type="radio" name="sx" id="sxMas" value="Masculino">
+                <label for="sxMas">Masculino</label>                    
+              </div>
+            </div>
+            <div class="d-none" id="msjSx"></div>
+            
+            <div class="form-group col-6">
+              <label for="fecha">Fecha de nacimiento</label>
+              <input type="date" name="" id="fecha" class="form-control" placeholder="">
+              <div class="d-none" id="msjFecha"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="ocupacion">Ocupación</label>
+              <input type="text" name="" id="ocupacion" class="form-control" placeholder="Ingeniero de software">
+              <div class="d-none" id="msjOcupacion"></div>
+              
+            </div>
+            
+            <button data-target="#infoModal" data-toggle="modal" type="submit" id="btn" class="btn btn-outline-success btn-block">Vista previa </button>
+
+        </form>
+
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Informacón del Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label ="Close">
+                  <span aria-hidden="true"> &times; </span>
+                </button>
+              </div>
+
+              <div class="modal-body" id="body">
+
+              </div>
+
+              <div class="modal-footer" id="footer">
+                <!-- <button type="button" class="btn btn-outline-primary">Guardar usuario</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="./js/app.js"></script>
+
+  </body>
+</html>
